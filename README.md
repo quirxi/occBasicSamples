@@ -23,12 +23,23 @@ The purpose of these tiny example programs is to show the most basic usage of th
 
 Up to now there are examples for following basic shapes available:
 
-* Box
-* Circle
-* Cone
-* Cylinder
-* Sphere
-* Torus
+**`Box:`**
+![Box](docs/aBox.png)
+
+**`Circle:`**
+![Circle](docs/aCircle.png)
+
+**`Cone:`**
+![Cone](docs/aCone.png)
+
+**`Cylinder:`**
+![Cylinder](docs/aCylinder.png)
+
+**`Sphere:`**
+![Sphere](docs/aSphere.png)
+
+**`Torus:`**
+![Torus](docs/aTorus.png)
 
 ## References
 

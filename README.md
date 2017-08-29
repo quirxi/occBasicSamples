@@ -65,15 +65,24 @@ The purpose of these tiny example programs is to show the most basic usage of th
 		root> echo '/path_to/opencascade/install/lib' > opencascade.conf
 		root> ldconfig
 		``` 
-
-	*  These examples
-		* TODO: 
-			* git pull
-			* compile
-			* link
-			* run
-			* view examples
-			* makefile targets
+* occBasicSamples
+	```
+	user> git clone https://github.com/quirxi/occBasicSamples.git
+	user> cd occBasicSamples/src
+	user> rm include lib path_to_OpenCascade_*
+	user> ln -s ../../opencascade/install/lib/ lib
+	user> ln -s ../../opencascade/install/include/ include
+	user> cd Box
+	user> make
+			g++ -c -pipe -O3 -std=c++11 -Wall -W -g -D_REENTRANT -I../include/opencascade -o main.o main.cpp
+			g++  -o aBox.exe main.o -L../lib   -lTKernel -lTKPrim -lTKTopAlgo -lTKSTL -lTKVRML -lTKBRep -lTKG3d -lTKMesh
+	user> ./aBox.exe 
+	user>  ls -a
+			.  ..  aBox.exe  aBox.stl  aBox.wrl  main.cpp  main.o  Makefile
+	```	
+	* TODO: 
+		* view examples
+		* makefile targets
 
 
 ## Available examples

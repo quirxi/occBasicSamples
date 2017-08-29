@@ -22,14 +22,15 @@ The purpose of these tiny example programs is to show the most basic usage of th
 		user> tar -xvzf opencascade-7.1.0.tgz
 		user> mkdir install
 		user> mkdir build```
-		* remove the lines containing "vtkRenderingFreeTypeOpenGL" from the files TKIVtk/EXTERNLIB and TKIVtkDraw/EXTERNLIB or u will get an linker error ( see: https://www.opencascade.com/content/compataility-latest-versions-vtk)
+	* remove the lines containing "vtkRenderingFreeTypeOpenGL" from the files TKIVtk/EXTERNLIB and TKIVtkDraw/EXTERNLIB 
+	  or u will get an linker error ( see: https://www.opencascade.com/content/compataility-latest-versions-vtk)
 		```user> fgrep -irns vtkRenderingFreeTypeOpenGL ../opencascade-7.1.0/src/
 			     ../opencascade-7.1.0/src/TKIVtk/EXTERNLIB:17:vtkRenderingFreeTypeOpenGL
 			     ../opencascade-7.1.0/src/TKIVtkDraw/EXTERNLIB:23:vtkRenderingFreeTypeOpenGL```
 		 ```user> cd build && cmake ../opencascade-7.1.0/```
-			* You have to adapt and configure the variables as you need them. 
-			* You will have to press the c key several times in order to solve all dependencies and generate the makefiles with the g-key then.
-			* Here is what i have changed:
+		* Adapt and configure the variables as you need them. 
+		* Press the c key several times in order to solve all dependencies and generate the makefiles with the g-key then.
+		* Here is what i have changed:
 				> INSTALL_DIR                      ../install                                                                                                                                                
 				> 3RDPARTY_SKIP_DOT_EXECUTABLE     OFF
 				> INSTALL_DOC_Overview             ON                                                                                                                                                  

@@ -21,6 +21,10 @@ The purpose of these tiny example programs is to show the most basic usage of th
 		* user> tar -xvzf opencascade-7.1.0.tgz
 		* user> mkdir install
 		* user> mkdir build
+		* remove the lines containing "vtkRenderingFreeTypeOpenGL" in the files TKIVtk/EXTERNLIB and TKIVtkDraw/EXTERNLIB or u will get an linker error ( see: https://www.opencascade.com/content/compataility-latest-versions-vtk)
+		* ```user> fgrep -irns vtkRenderingFreeTypeOpenGL ../opencascade-7.1.0/src/
+			  ../opencascade-7.1.0/src/TKIVtk/EXTERNLIB:17:vtkRenderingFreeTypeOpenGL
+			  ../opencascade-7.1.0/src/TKIVtkDraw/EXTERNLIB:23:vtkRenderingFreeTypeOpenGL```
 		* user> cd build && cmake ../opencascade-7.1.0/
 			* You have to adapt and configure your the variables as u need them. 
 			* You will have to press the c key several times in order to solve all dependencies and generate the makefiles with the g-key then.
@@ -38,9 +42,10 @@ The purpose of these tiny example programs is to show the most basic usage of th
 				USE_TBB                          ON                                                                                                                                                        
 				USE_VTK                          ON
 	* Compile
-		user> make
+		* user> make
 	* Install
-		user> make install
+		* Link tcl8.6 to tcl8 if you get an that errormessage that tcl8 cannot be found: ```root> ln -s /usr/lib/x86_64-linux-gnu/tcl8.6/ /usr/lib/x86_64-linux-gnu/tcl8```
+		* user> make install
 		
 	* TODO: ldconfig
 	

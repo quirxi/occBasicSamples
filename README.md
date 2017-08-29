@@ -7,7 +7,43 @@ The purpose of these tiny example programs is to show the most basic usage of th
 
 ## Installation
 
-* Opencascade
+* OpenCascade (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building.html)
+	* Building 3rd party libraries: see https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_3rdparty_linux.html
+		* root> apt-get install g++ cmake cmake-curses-gui
+		* root> apt-get install tcllib tklib tcl-dev tk-dev libfreetype-dev libxt-dev libxmu-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libfreeimage-dev libtbb-dev libgl2ps-dev 
+		* root> apt-get install doxygen graphviz
+		* root> apt-get install libqt4-dev libvtk6-dev libvtk6-qt-dev
+	* Download OpenCascade from https://www.opencascade.com/content/latest-release. You must create an account in order to do so.
+	* Configure (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_cmake.html)
+		* user> mkdir opencascade
+		* user> cd opencascade/
+		* user> cp ~/Downloads/opencascade-7.1.0.tgz .
+		* user> tar -xvzf opencascade-7.1.0.tgz
+		* user> mkdir install
+		* user> mkdir build
+		* user> cd build && cmake ../opencascade-7.1.0/
+			* You have to adapt and configure your the variables as u need them. 
+			* You will have to press the c key several times in order to solve all dependencies and generate the makefiles with the g-key then.
+			* Here is what i have changed:
+				INSTALL_DIR                      ../install                                                                                                                                                
+				3RDPARTY_SKIP_DOT_EXECUTABLE     OFF
+				INSTALL_DOC_Overview             ON                                                                                                                                                  
+				INSTALL_FREETYPE                 ON  
+				INSTALL_SAMPLES                  ON                                                                                                                                                        
+				INSTALL_TCL                      ON                                                                                                                                                        
+				INSTALL_TEST_CASES               ON                                                                                                                                                        
+				INSTALL_TK                       ON                                                                                                                                                        
+				USE_FREEIMAGE                    ON                                                                                                                                                        
+				USE_GL2PS                        ON                                                                                                                                                        
+				USE_TBB                          ON                                                                                                                                                        
+				USE_VTK                          ON
+	* Compile
+		user> make
+	* Install
+		user> make install
+		
+	* TODO: ldconfig
+	
 
 *  These examples
     * TODO: 
@@ -45,9 +81,12 @@ Up to now there are examples for following basic shapes available:
 
 * https://github.com/eryar/occQt
 * https://www.opencascade.com
+* https://www.opencascade.com/doc/occt-7.1.0/overview/html/index.html
+* https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_3rdparty_linux.html
 * https://www.blender.org
 * http://www.meshlab.net
 * https://castle-engine.sourceforge.io/view3dscene.php
+
 
 ## Authors:
 

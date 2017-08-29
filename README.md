@@ -55,17 +55,14 @@ The purpose of these tiny example programs is to show the most basic usage of th
 		user> make
 		```
 	* Install:
-		* Link tcl8.6 to tcl8 if you get an that errormessage that tcl8 cannot be found: 
-		      ```
-		      root> ln -s /usr/lib/x86_64-linux-gnu/tcl8.6/ /usr/lib/x86_64-linux-gnu/tcl8
-		      ```
+		* Link tcl8.6 to tcl8 if you get an that errormessage that tcl8 cannot be found: `root> ln -s /usr/lib/x86_64-linux-gnu/tcl8.6/ /usr/lib/x86_64-linux-gnu/tcl8`
 		```
 		user> make install
 		```
 	* Add the OpenCascade libraries to your library path:
 		```
 		root> cd /etc/ld.so.conf.d/
-		root> echo '/home/arno/Projects/opencascade/install/lib' > opencascade.conf
+		root> echo '/path_to/opencascade/install/lib' > opencascade.conf
 		root> ldconfig
 		``` 
 

@@ -33,7 +33,7 @@ The purpose of these tiny example programs is to show the most basic usage of th
 			     ../opencascade-7.1.0/src/TKIVtkDraw/EXTERNLIB:23:vtkRenderingFreeTypeOpenGL
 		```
 		```
-		user> cd build && cmake ../opencascade-7.1.0/
+		user> cd build && ccmake ../opencascade-7.1.0/
 		```
 		* Adapt and configure the variables as you need them. 
 		* Press the c key several times in order to solve all dependencies and generate the makefiles with the g-key then.

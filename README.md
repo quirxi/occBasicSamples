@@ -9,25 +9,32 @@ The purpose of these tiny example programs is to show the most basic usage of th
 
 * OpenCascade (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building.html)
 	* Building 3rd party libraries (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_3rdparty_linux.html):
-		```root> apt-get install g++ cmake cmake-curses-gui
+		```
+		root> apt-get install g++ cmake cmake-curses-gui
 		root> apt-get install tcllib tklib tcl-dev tk-dev libfreetype-dev libxt-dev libxmu-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libfreeimage-dev libtbb-dev libgl2ps-dev 
 		root> apt-get install doxygen graphviz
-		root> apt-get install libqt4-dev libvtk6-dev libvtk6-qt-dev```
-	
+		root> apt-get install libqt4-dev libvtk6-dev libvtk6-qt-dev
+		```
 	* Download OpenCascade from https://www.opencascade.com/content/latest-release. You must create an account in order to do so.
 	* Configure (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_cmake.html):
-	 ```user> mkdir opencascade
+		```
+		user> mkdir opencascade
 		user> cd opencascade/
 		user> cp ~/Downloads/opencascade-7.1.0.tgz .
 		user> tar -xvzf opencascade-7.1.0.tgz
 		user> mkdir install
-		user> mkdir build```
+		user> mkdir build
+		```
 	* remove the lines containing "vtkRenderingFreeTypeOpenGL" from the files TKIVtk/EXTERNLIB and TKIVtkDraw/EXTERNLIB 
 	  or u will get an linker error ( see: https://www.opencascade.com/content/compataility-latest-versions-vtk)
-		```user> fgrep -irns vtkRenderingFreeTypeOpenGL ../opencascade-7.1.0/src/
+		```
+		user> fgrep -irns vtkRenderingFreeTypeOpenGL ../opencascade-7.1.0/src/
 			     ../opencascade-7.1.0/src/TKIVtk/EXTERNLIB:17:vtkRenderingFreeTypeOpenGL
-			     ../opencascade-7.1.0/src/TKIVtkDraw/EXTERNLIB:23:vtkRenderingFreeTypeOpenGL```
-		 ```user> cd build && cmake ../opencascade-7.1.0/```
+			     ../opencascade-7.1.0/src/TKIVtkDraw/EXTERNLIB:23:vtkRenderingFreeTypeOpenGL
+		```
+		```
+		user> cd build && cmake ../opencascade-7.1.0/
+		```
 		* Adapt and configure the variables as you need them. 
 		* Press the c key several times in order to solve all dependencies and generate the makefiles with the g-key then.
 		* Here is what i have changed:
@@ -44,15 +51,23 @@ The purpose of these tiny example programs is to show the most basic usage of th
 				> USE_TBB                          ON                                                                                                                                                        
 				> USE_VTK                          ON
 	* Compile:
-		```user> make```
+		```
+		user> make
+		```
 	* Install:
 		* Link tcl8.6 to tcl8 if you get an that errormessage that tcl8 cannot be found: 
-		      ```root> ln -s /usr/lib/x86_64-linux-gnu/tcl8.6/ /usr/lib/x86_64-linux-gnu/tcl8```
-		```user> make install```
+		      ```
+		      root> ln -s /usr/lib/x86_64-linux-gnu/tcl8.6/ /usr/lib/x86_64-linux-gnu/tcl8
+		      ```
+		```
+		user> make install
+		```
 	* Add the OpenCascade libraries to your library path:
-		```root> cd /etc/ld.so.conf.d/
-		   root> echo '/home/arno/Projects/opencascade/install/lib' > opencascade.conf
-		   root> ldconfig``` 
+		```
+		root> cd /etc/ld.so.conf.d/
+		root> echo '/home/arno/Projects/opencascade/install/lib' > opencascade.conf
+		root> ldconfig
+		``` 
 
 	*  These examples
 		* TODO: 

@@ -26,7 +26,7 @@ INCPATH         := -I../include/opencascade
 # ---> Linkeroptions
 LINK            := g++
 LFLAGS          := # -fPIC
-LIBS            := -lTKernel -lTKPrim -lTKTopAlgo -lTKSTL -lTKVRML -lTKBRep -lTKG3d -lTKMesh
+LIBS            := -lTKernel -lTKPrim -lTKTopAlgo -lTKSTL -lTKVRML -lTKSTEP -lTKBRep -lTKG3d -lTKMesh
 LIBPATH         := -L../lib  
 # ---> Options for a shared library
 SHARE_LIB_FLAG  := -shared -W1,-soname,
@@ -118,6 +118,7 @@ proper: clean
 	$(RM) *~
 	$(RM) *.stl
 	$(RM) *.wrl
+	$(RM) *.stp
 
 tags: $(HEADERS) $(SOURCES)
 	$(TAGS) $(HEADERS) $(SOURCES)

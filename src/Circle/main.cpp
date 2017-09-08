@@ -1,17 +1,15 @@
 /* Compile and link:
 *
 *  g++ -c -pipe -O3 -std=c++11 -Wall -W -g -D_REENTRANT -I../include/opencascade -o main.o main.cpp
-*  g++  -o aCircle.exe main.o -L../lib   -lTKernel -lTKPrim -lTKTopAlgo -lTKSTL -lTKVRML -lTKBRep -lTKG3d -lTKMesh
+*  g++  -o aCircle.exe main.o -L../lib -lTKernel -lTKPrim -lTKTopAlgo -lTKSTL -lTKVRML -lTKSTEP -lTKBRep -lTKG3d -lTKMesh
 */
-
-
 #include <gp_Circ.hxx>
 #include <TopoDS_Edge.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <BRepMesh_IncrementalMesh.hxx>
-#include <StlAPI_Writer.hxx>
+#include <STEPControl_Writer.hxx>
+//#include <StlAPI_Writer.hxx>
 #include <VrmlAPI_Writer.hxx>
-
 
 int main(int __attribute__((unused)) argc, char __attribute__((unused)) *argv[])
 {
@@ -26,6 +24,9 @@ int main(int __attribute__((unused)) argc, char __attribute__((unused)) *argv[])
 //    aStlWriter.Write(aCircle, "aCircle.stl");
     VrmlAPI_Writer aVrmlWriter;
     aVrmlWriter.Write(aCircle, "aCircle.wrl");
+    STEPControl_Writer aStepWriter;
+    aStepWriter.Transfer(aCircle,STEPControl_AsIs);
+    aStepWriter.Write("aCircle.stp");
  
     return 0;
 }

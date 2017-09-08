@@ -1,6 +1,6 @@
 SUBDIRS = Box Circle Cone Cylinder Sphere Torus
 
-.PHONY: all clean proper depend world tags
+.PHONY: all clean proper depend world tags execute
 
 all: 
 	for DIR in $(SUBDIRS); do make -C $$DIR all; done

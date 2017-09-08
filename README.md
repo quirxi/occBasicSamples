@@ -1,11 +1,13 @@
 # occBasicSamples
 
 Very basic [OpenCASCADE](https://www.opencascade.com) examples that compile on Linux on the commandline with g++.
-Only a .stl and .wrl is written that can be imported and viewed by a program like [blender](https://www.blender.org), [MeshLab](http://www.meshlab.net) or [view3dscene](https://castle-engine.sourceforge.io/view3dscene.php) for example.
+A .stl, .wrl and .stp file is written into a file which can be imported and viewed by a program like [blender](https://www.blender.org), [MeshLab](http://www.meshlab.net), [FreeCAD](https://www.freecadweb.org) or [view3dscene](https://castle-engine.sourceforge.io/view3dscene.php) for example.
 The purpose of these tiny example programs is to show the most basic usage of the Open CASCADE 3D library possible, thus flattening the learning curve for a beginner (like me).
-
+ 
 
 ## Installation
+
+Debian 8.9 (jessie) was used as operating system.
 
 * OpenCascade (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building.html)
 	* Building 3rd party libraries (https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_3rdparty_linux.html):
@@ -114,6 +116,7 @@ Up to now there are examples for following basic shapes available:
 * https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_3rdparty_linux.html
 * https://www.blender.org
 * http://www.meshlab.net
+* https://www.freecadweb.org
 * https://castle-engine.sourceforge.io/view3dscene.php
 
 

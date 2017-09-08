@@ -19,3 +19,6 @@ world:
 
 tags:
 	for DIR in $(SUBDIRS); do make -C $$DIR tags; done
+	
+execute:
+	for DIR in $(SUBDIRS); do cd $$DIR && ./a"$$DIR".exe && cd -; done

@@ -1,7 +1,7 @@
 # occBasicSamples
 
-Very basic OpenCASCADE examples that compile on Linux on the commandline with g++.
-Only a .stl and .wrl is written that can be imported and viewed by a program like blender, MeshLab or view3dscene for example.
+Very basic [OpenCASCADE](https://www.opencascade.com) examples that compile on Linux on the commandline with g++.
+Only a .stl and .wrl is written that can be imported and viewed by a program like [blender](https://www.blender.org), [MeshLab](http://www.meshlab.net) or [view3dscene](https://castle-engine.sourceforge.io/view3dscene.php) for example.
 The purpose of these tiny example programs is to show the most basic usage of the Open CASCADE 3D library possible, thus flattening the learning curve for a beginner (like me).
 
 
@@ -80,9 +80,6 @@ The purpose of these tiny example programs is to show the most basic usage of th
 	user>  ls -a
 			.  ..  aBox.exe  aBox.stl  aBox.wrl  main.cpp  main.o  Makefile
 	```	
-	* TODO: 
-		* view examples
-		* makefile targets
 
 
 ## Available examples

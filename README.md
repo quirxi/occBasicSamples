@@ -108,6 +108,7 @@ Up to now there are examples for following basic shapes available:
 
 * https://github.com/eryar/occQt
 * https://occtutorials.wordpress.com/
+* http://www.creativecadtechnology.com/OCC/ShowScript?userName=gvh&groupName=demo&scriptName=MakeBottle
 * https://www.opencascade.com
 * https://www.opencascade.com/doc/occt-7.1.0/overview/html/index.html
 * https://www.opencascade.com/doc/occt-7.1.0/overview/html/occt_dev_guides__building_3rdparty_linux.html
